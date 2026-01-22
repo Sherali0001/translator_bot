@@ -15,7 +15,7 @@ async def start(msg: Message):
         name=msg.from_user.first_name,
         username=msg.from_user.username
     )
-    await msg.reply(text='Tarjimon botga xush kelibsiz! 😊')
+    await msg.reply(text='<i>Tarjimon botga xush kelibsiz! 😊</i>')
     time.sleep(0.3)
     await msg.answer(text='Tilni sozlash uchun /choose buyruqni kiriting 🗝️')
 
@@ -35,4 +35,4 @@ async def watch(msg: Message):
 
 @router.message(Command('creator'))
 async def creator(msg: Message):
-    await msg.answer(text="📊 Bot sizga manfatli bo'lgan degan umiddaman\n💡 Taklif va savollarga javob berishga tayyorman\n📶 @Sayfiyev_2005")
+    await msg.answer(text="📊 Bot sizga manfatli bo'lgan degan umiddaman\n💡 Taklif va savollarga javob berishga tayyorman: @Sayfiyev_2005")

@@ -32,7 +32,7 @@ async def choose(msg: Message):
 async def callback_uzb_eng(call: CallbackQuery, state: FSMContext):
     await call.answer(text="qabul qilindi ✅")
     src, dest = call.data.split('-')
-    await call.message.answer(text=f"{language[src]} xabar yuboring, men sizga {language[dest]} qilib beraman.")
+    await call.message.answer(text=f"💡 {language[src]} xabar yuboring, men sizga {language[dest]} qilib qaytaraman.")
     if dest == "ru":
         await state.set_state(Form.uz_ru)
     elif dest == "en":
