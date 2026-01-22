@@ -2,8 +2,7 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery
 
-from googletrans import Translator
-translator = Translator()
+from deep_translator import GoogleTranslator
 
 from state import Form
 from aiogram.fsm.context import FSMContext
@@ -51,21 +50,21 @@ async def uzb_eng(msg: Message, state: FSMContext):
 @router.message(Form.uz_en)
 async def uzb_eng(msg: Message, state: FSMContext):
     matn = msg.text
-    tarjima = translator.translate(text=matn, src='uz',dest='en').text
+    tarjima = GoogleTranslator(source="uz",target='en').translate(matn)
     await state.set_state(Form.uz_en)
     await msg.reply(text=tarjima)
 
 @router.message(Form.uz_ru)
 async def uzb_eng(msg: Message, state: FSMContext):
     matn = msg.text
-    tarjima = translator.translate(text=matn, src='uz',dest='ru').text
+    tarjima = GoogleTranslator(source="uz",target='ru').translate(matn)
     await state.set_state(Form.uz_ru)
     await msg.reply(text=tarjima)
 
 @router.message(Form.uz_tr)
 async def uzb_eng(msg: Message, state: FSMContext):
     matn = msg.text
-    tarjima = translator.translate(text=matn, src='uz',dest='tr').text
+    tarjima = GoogleTranslator(source="uz",target='tr').translate(matn)
     await state.set_state(Form.uz_tr)
     await msg.reply(text=tarjima)
 
