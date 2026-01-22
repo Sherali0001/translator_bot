@@ -32,3 +32,7 @@ async def watch(msg: Message):
         await msg.answer(text=response)
         time.sleep(0.5)
     await msg.reply(text="⬆️ Ushbu foydalanuvchilar aniqlandi.")
+
+@router.message(Command('creator'))
+async def creator(msg: Message):
+    await msg.answer(text="📊 Bot sizga manfatli bo'lgan degan umiddaman\n💡 Taklif va savollarga javob berishga tayyorman\n📶 @Sayfiyev_2005")
