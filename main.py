@@ -1,6 +1,7 @@
 from aiogram import Bot, Dispatcher, F
 from asyncio import run
 
+from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 from commands import router as cmd_router
@@ -14,7 +15,7 @@ from save_users import create_user
 
 TOKEN = getenv('TOKEN')
 async def main():
-    bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
+    bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
     create_user()
 
