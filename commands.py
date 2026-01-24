@@ -31,7 +31,7 @@ async def watch(msg: Message):
         response = f"name: {user[1]},\nusername: {username},\nstart time: {user[2]}"
         await msg.answer(text=response)
         time.sleep(0.5)
-    await msg.reply(text="⬆️ Ushbu foydalanuvchilar aniqlandi.")
+    await msg.reply(text=f"⬆️ Ushbu {len(rows)} foydalanuvchilar aniqlandi.")
 
 @router.message(Command('creator'))
 async def creator(msg: Message):
